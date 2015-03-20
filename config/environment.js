@@ -1,6 +1,8 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
+  var compileSass = require('broccoli-sass');
+  var appCss = compileSass(['app'], 'styles/app.sass', 'assets/app.css');
   var ENV = {
     modulePrefix: 'chat',
     environment: environment,
