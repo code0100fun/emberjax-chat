@@ -1,0 +1,10 @@
+%h2#title EmberJax Chat
+-if session.isAuthenticated
+  %span Hello #{currentUser.displayName} (@#{currentUser.username})
+  %a(href='#'){action "logout"} Logout
+-else
+  %a.login(href='#'){action "login"}
+    =fa-icon "github" size=2
+    Sign in with Github
+
+=outlet

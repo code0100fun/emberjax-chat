@@ -1,0 +1,9 @@
+-scrolling-div id="messagesDiv" update-when=model
+  -each model as |message|
+    %div
+      %em=message.username
+      :
+      =message.text
+%form{action "sendMessage" on="submit"}
+  =input id="messageInput" value=text placeholder=placeholder disabled=unauthenticated
+  %button.button-xsmall.pure-button(type=submit){ disabled=unauthenticated} Send
